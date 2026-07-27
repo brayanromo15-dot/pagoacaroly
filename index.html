@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos de Pago y Contacto</title>
+    <style>
+        :root {
+            --primary-wa: #25D366;
+            --primary-bank: #0056b3;
+            --bg-color: #f4f6f8;
+            --card-bg: #ffffff;
+            --text-color: #333333;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            width: 100%;
+            max-width: 400px;
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 1.3rem;
+            margin-bottom: 6px;
+            color: #1a1a1a;
+        }
+
+        p.subtitle {
+            font-size: 0.88rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .payment-info {
+            background-color: #f8f9fa;
+            border-left: 4px solid var(--primary-bank);
+            border-radius: 8px;
+            padding: 14px;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .info-row {
+            margin-bottom: 12px;
+        }
+
+        .info-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: #777;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .value {
+            font-size: 0.98rem;
+            font-weight: 600;
+            color: #222;
+            word-break: break-all;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            color: white;
+            cursor: pointer;
+            transition: transform 0.1s ease;
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+        }
+
+        .btn-whatsapp {
+            background-color: var(--primary-wa);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h1>Datos de Pago</h1>
+        <p class="subtitle">Realiza tu transferencia a los datos indicados y envía tu comprobante.</p>
+
+        <div class="payment-info">
+            <div class="info-row">
+                <span class="label">Banco</span>
+                <span class="value">BBVA</span>
+            </div>
+            <div class="info-row">
+                <span class="label">Titular</span>
+                <span class="value">Francisco Rolando Lozano</span>
+            </div>
+            <div class="info-row">
+                <span class="label">Número de Tarjeta</span>
+                <span class="value">4152 3141 3542 2411</span>
+            </div>
+        </div>
+
+        <!-- Enlace directo a WhatsApp con código de país de México (+52) -->
+        <a href="https://wa.me/528661721572?text=Hola,%20adjunto%20mi%20comprobante%20de%20pago." target="_blank" class="btn btn-whatsapp">
+            💬 Enviar Comprobante por WhatsApp
+        </a>
+    </div>
+
+</body>
+</html>
