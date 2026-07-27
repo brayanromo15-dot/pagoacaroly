@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos de Pago - BBVA</title>
+    <style>
+        @page {
+            size: A4 portrait;
+            margin: 15mm;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #f0f4f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .poster-container {
+            background-color: #ffffff;
+            width: 100%;
+            max-width: 420px;
+            padding: 30px 25px 35px 25px;
+            border-radius: 24px;
+            box-shadow: 0 12px 35px rgba(0, 68, 129, 0.12);
+            border: 1px solid #dbeafe;
+            text-align: center;
+        }
+
+        .main-title {
+            font-size: 26pt;
+            font-weight: 900;
+            letter-spacing: 2px;
+            color: #004481;
+            margin-bottom: 18px;
+            text-transform: uppercase;
+            font-family: "Arial Black", sans-serif;
+        }
+
+        /* Banner de Aviso Previo */
+        .notice-box {
+            background-color: #fff8e6;
+            border-left: 4px solid #f59e0b;
+            border-radius: 10px;
+            padding: 12px 14px;
+            margin-bottom: 22px;
+            text-align: left;
+        }
+
+        .notice-title {
+            font-size: 9.5pt;
+            font-weight: 800;
+            color: #b45309;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .notice-text {
+            font-size: 9.5pt;
+            color: #451a03;
+            line-height: 1.35;
+            font-weight: 500;
+        }
+
+        /* Tarjeta Azul BBVA Oficial */
+        .credit-card {
+            background: linear-gradient(135deg, #004481 0%, #1464A5 60%, #002B49 100%);
+            border-radius: 18px;
+            padding: 26px 24px;
+            color: #ffffff;
+            position: relative;
+            box-shadow: 0 10px 25px rgba(0, 68, 129, 0.35);
+            text-align: left;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            overflow: hidden;
+        }
+
+        /* Destello y patrón de fondo */
+        .credit-card::before {
+            content: "";
+            position: absolute;
+            top: -40%;
+            right: -30%;
+            width: 250px;
+            height: 250px;
+            background: radial-gradient(circle, rgba(255,255,255,0.12) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 22px;
+        }
+
+        /* Chip Dorado */
+        .chip {
+            width: 46px;
+            height: 34px;
+            background: linear-gradient(135deg, #f3d085 0%, #c59b4e 100%);
+            border-radius: 7px;
+            position: relative;
+            border: 1px solid #a87e38;
+            box-shadow: inset 0 0 4px rgba(0,0,0,0.25);
+        }
+
+        /* Logo Oficial BBVA SVG estilizado */
+        .bbva-logo-svg {
+            font-size: 24pt;
+            font-weight: 900;
+            letter-spacing: 2px;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .card-number-section {
+            margin-bottom: 20px;
+        }
+
+        .card-number {
+            font-family: "Courier New", Courier, monospace;
+            font-size: 17.5pt;
+            font-weight: bold;
+            letter-spacing: 2.5px;
+            color: #ffffff;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .label {
+            font-size: 10pt;
+            color: #93c5fd;
+            font-weight: 700;
+            margin-top: 3px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .card-holder-section {
+            margin-bottom: 22px;
+        }
+
+        .card-holder-name {
+            font-size: 13.5pt;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            color: #ffffff;
+            text-transform: uppercase;
+            line-height: 1.25;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        /* Botón Directo WhatsApp */
+        .btn-whatsapp {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            background-color: #25D366;
+            color: #ffffff;
+            padding: 15px;
+            border-radius: 12px;
+            font-size: 11pt;
+            font-weight: 800;
+            text-decoration: none;
+            margin-top: 22px;
+            box-shadow: 0 6px 18px rgba(37, 211, 102, 0.35);
+            transition: transform 0.1s ease;
+        }
+
+        .wa-number-sub {
+            font-size: 10pt;
+            color: #64748b;
+            margin-top: 10px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="poster-container">
+        <div class="main-title">DATOS DE PAGO</div>
+
+        <!-- Aviso previo -->
+        <div class="notice-box">
+            <div class="notice-title">⚠️ Importante antes de transferir</div>
+            <div class="notice-text">
+                Por favor, <b>manda primero un mensaje a WhatsApp</b> antes de realizar la transferencia para registrar tu número y dar seguimiento más fácil a tu pago.
+            </div>
+        </div>
+
+        <!-- Tarjeta Azul BBVA -->
+        <div class="credit-card">
+            <div class="card-header">
+                <div class="chip"></div>
+                <!-- Logo BBVA -->
+                <div class="bbva-logo-svg">BBVA</div>
+            </div>
+
+            <div class="card-number-section">
+                <div class="card-number">4152 3141 3542 2411</div>
+                <div class="label">Número de Tarjeta</div>
+            </div>
+
+            <div class="card-holder-section">
+                <div class="card-holder-name">FRANCISCO<br>ROLANDO LOZANO</div>
+                <div class="label">Titular de la cuenta</div>
+            </div>
+        </div>
+
+        <!-- Botón interactivo a WhatsApp -->
+        <a href="https://wa.me/528661721572?text=Hola,%20env%C3%ADo%20mensaje%20previo%20para%20registrar%20mi%20número%20antes%20de%20realizar%20el%20pago." target="_blank" class="btn-whatsapp">
+            💬 Enviar mensaje por WhatsApp
+        </a>
+
+        <div class="wa-number-sub">WhatsApp: 866 172 15 72</div>
+    </div>
+
+</body>
+</html>
